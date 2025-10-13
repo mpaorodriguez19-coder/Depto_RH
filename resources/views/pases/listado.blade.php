@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <h2>Listado de Pases de Salida</h2>
+    <h2>Listado de Pases de Salida Melba</h2>
 
     @if (session('success'))
         <div class="success">{{ session('success') }}</div>
