@@ -15,6 +15,21 @@
 </head>
 <body>
 
+<!-- Botón para regresar al listado de Pases -->
+<a href="{{ route('pases.listado') }}" 
+   style="display: inline-block; 
+          background-color: #28a745; 
+          color: white; 
+          padding: 10px 15px; 
+          border-radius: 5px; 
+          text-decoration: none; 
+          font-weight: bold; 
+          margin-bottom: 15px;">
+    ← Volver al listado de Pases
+</a>
+
+
+
     <h2>📋 Listado de Puestos</h2>
 
     <!-- Mostrar mensaje de éxito si existe -->

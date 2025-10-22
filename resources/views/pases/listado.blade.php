@@ -51,5 +51,18 @@
         </tbody>
     </table>
 
+<!-- Botón para ir al listado de Puestos -->
+<a href="{{ route('puestos.index') }}" 
+   style="display: inline-block; 
+          background-color: #28a745; 
+          color: white; 
+          padding: 10px 15px; 
+          border-radius: 5px; 
+          text-decoration: none; 
+          font-weight: bold; 
+          margin-bottom: 15px;">
+    Ver listado de Puestos
+</a>
+
 </body>
 </html>
