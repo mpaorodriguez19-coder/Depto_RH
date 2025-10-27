@@ -2,41 +2,48 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaseController;
-use App\Http\Controllers\PuestoController; // Importamos el controlador de puestos
+use App\Http\Controllers\PuestoController;
+
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| 🌐 RUTAS WEB DEL PROYECTO
 |--------------------------------------------------------------------------
-| Aquí definimos las rutas de la aplicación. Cada ruta apunta
-| a un método en un controlador y tiene un nombre asignado.
+| Aquí se registran todas las rutas que manejarán las vistas del sistema.
+| Cada ruta está asociada a un método del controlador correspondiente.
+| 
+| Notas:
+| - 'name()' define un alias para usar en las vistas (route('nombre.alias'))
+| - 'get' se usa para mostrar vistas
+| - 'post' para guardar datos
 */
 
-// Página principal: muestra el listado de pases
-Route::get('/', [PaseController::class, 'listado'])
-    ->name('pases.listado');
+/* =======================
+   🟩 RUTAS PARA PASES
+   ======================= */
 
-// Formulario para crear un nuevo pase
-Route::get('/crear', [PaseController::class, 'crear'])
-    ->name('pases.crear');
+// 📋 Listado principal de pases (vista inicial)
+Route::get('/', [PaseController::class, 'listado'])->name('pases.listado');
 
-// Guardar el nuevo pase en la base de datos
-Route::post('/guardar', [PaseController::class, 'guardar'])
-    ->name('pases.guardar');
+// ➕ Mostrar formulario para crear un nuevo pase
+Route::get('/pases/crear', [PaseController::class, 'crear'])->name('pases.crear');
 
-// Ruta para mostrar la lista de puestos
-Route::get('/puestos', [PuestoController::class, 'index'])
-    ->name('puestos.index');
+// 💾 Guardar un nuevo pase en la base de datos
+Route::post('/pases/guardar', [PaseController::class, 'guardar'])->name('pases.guardar');
 
-// Ruta para mostrar el formulario de creación de puestos
-Route::get('/puestos/crear', [PuestoController::class, 'crear'])
-    ->name('puestos.crear');
 
-// Ruta para guardar el nuevo puesto
-Route::post('/puestos/guardar', [PuestoController::class, 'guardar'])
-    ->name('puestos.guardar');
+/* =======================
+   🟦 RUTAS PARA PUESTOS
+   ======================= */
 
-// Ruta para mostrar la lista de puestos
-Route::get(uri: '/puestos', action: [PuestoController::class, 'index'])->name(name: 'puestos.index');
+// 📋 Listado de todos los puestos registrados
+Route::get('/puestos', [PuestoController::class, 'index'])->name('puestos.index');
+
+// ➕ Mostrar formulario para crear un nuevo puesto
+Route::get('/puestos/crear', [PuestoController::class, 'crear'])->name('puestos.crear');
+
+// 💾 Guardar el nuevo puesto en la base de datos
+Route::post('/puestos/guardar', [PuestoController::class, 'guardar'])->name('puestos.guardar');
+
 
 
 
