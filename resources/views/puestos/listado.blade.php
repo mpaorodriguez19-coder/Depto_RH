@@ -31,7 +31,7 @@
         .success { background: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px; }
 
         /* Buscador */
-        form { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        form { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
         input[type="text"] { padding: 8px; width: 250px; border: 1px solid #ccc; border-radius: 5px; }
         button[type="submit"] {
             background-color: #28a745;
@@ -70,8 +70,14 @@
         <a href="{{ route('puestos.index') }}" class="btn btn-green">Refrescar</a>
     </form>
 
-    <!-- ➕ Botón para crear nuevo puesto -->
-    <a href="{{ route('puestos.crear') }}" class="btn btn-green">➕ Nuevo Puesto</a>
+    <!-- 🔘 BOTONES DE ACCIÓN -->
+    <div style="margin-bottom: 15px;">
+        <!-- ➕ Crear nuevo puesto -->
+        <a href="{{ route('puestos.crear') }}" class="btn btn-green">➕ Nuevo Puesto</a>
+
+        <!-- 👥 Ir al listado de empleados -->
+        <a href="{{ route('empleados.index') }}" class="btn btn-green">👥 Ver Empleados</a>
+    </div>
 
     <!-- 📄 Tabla de puestos -->
     <table>
@@ -99,5 +105,4 @@
 
 </body>
 </html>
-
 
